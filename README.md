@@ -3,5 +3,5 @@
 ## Download del makefile lite
 
 ```
-sudo curl -sSL https://raw.githubusercontent.com/manprint/ubuntu-dind/master/MakefileLite -o Makefile
+curl -sSL https://raw.githubusercontent.com/manprint/ubuntu-dind/master/MakefileLite -o Makefile
 ```
