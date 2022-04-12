@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update \
 	&& apt upgrade -y \
 	&& apt install -y ca-certificates docker python3-pip docker.io sshpass \
-		iptables supervisor sudo nano curl wget tree cron make fuse git \
+		iptables supervisor sudo nano curl wget tree cron make fuse git rsync \
 		bash-completion telnet iputils-ping tzdata openssh-server unzip \
 	&& ln -fs /usr/share/zoneinfo/Europe/Rome /etc/localtime \
 	&& dpkg-reconfigure -f noninteractive tzdata \

@@ -2,7 +2,7 @@
 		clean \
 		create_persistence_folder create_persistence_volume \
 		volume_prune down stop start up up_sysbox destroy_all \
-		connect ssh chrome_webssh firefox_webssh \
+		connect ssh chrome_webssh firefox_webssh pull \
 		context_create context_enable context_disable context_remove
 
 TITLE_MAKEFILE = Dind Ubuntu Supervisord with Ssh, Wssh, Terraform, Rclone and Cron
@@ -30,12 +30,17 @@ export CNT_NAME := ubuntu-dind
 export CNT_HOSTNAME := dind-srv01
 
 
-##@Docker system management
+##@ Docker system management
 
 clean: ## Docker image prune and builder prune
 	-@echo "y" | docker image prune
 	-@echo "y" | docker builder prune
 	-@echo "y" | docker volume prune
+
+##@ Image
+
+pull: ## Pull image
+	@docker pull ${IMAGE}
 
 ##@ Persistence
 
